@@ -26,7 +26,7 @@ const Cotizaciones = ({ data }) => {
                 </p>
               </div>
             </div>
-            <p className="text-center text-sm px-6">
+            <p className="text-center text-sm md:px-6">
               Ultima actualización: {data.last_update.slice(0, 19)}
             </p>
           </div>
@@ -52,7 +52,7 @@ const Cotizaciones = ({ data }) => {
                 </p>
               </div>
             </div>
-            <p className="text-center text-sm px-6">
+            <p className="text-center text-sm md:px-6">
               Última actualización: {data.last_update.slice(0, 19)}
             </p>
           </div>
@@ -75,7 +75,7 @@ const Cotizaciones = ({ data }) => {
                 </p>
               </div>
             </div>
-            <p className="text-center text-sm px-6">
+            <p className="text-center text-sm md:px-6">
               Última actualización: {data.last_update.slice(0, 19)}
             </p>
           </div>
