@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
 export default function ContactForm() {
@@ -11,6 +11,10 @@ export default function ContactForm() {
   const onSubmit = (data) => {
     console.log(data);
   };
+
+  useEffect(() =>{
+    document.title= `Contacto`
+ }, [])        
 
   return (
     <div

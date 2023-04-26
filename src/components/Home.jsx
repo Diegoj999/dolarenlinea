@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { fetchData } from "./fetchData";
 
 import { Graficos } from "./Graficos";
@@ -16,6 +16,10 @@ const graphData = fetchData(
 const Home = () => {
   const data = apiData.read();
   const graphDataReaded = graphData.read();
+
+  useEffect(() =>{
+    document.title= `Inicio`
+ }, [])        
 
   return (
     <>
