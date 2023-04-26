@@ -24,7 +24,6 @@ ChartJS.register(
 
 export default function LinesChart({dataGraph}) {
   
-    console.log(dataGraph)
     const dBlue = dataGraph.filter((e) => dataGraph.indexOf(e) % 2 !== 0);
     const dOf = dataGraph.filter((e) => dataGraph.indexOf(e) % 2 === 0);
     const dataGraphBPrice = dBlue.map(e => e.value_sell).reverse()
