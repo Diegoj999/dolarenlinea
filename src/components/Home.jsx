@@ -1,9 +1,11 @@
 import React from "react";
 import { fetchData } from "./fetchData";
-import Cotizacion from "./Cotizacion";
+
 import { Graficos } from "./Graficos";
 import { Calculadora } from "./Calculadora";
 import { Separador } from "./Separador";
+import Cotizaciones from "./Cotizaciones";
+
 
 const apiData = fetchData("https://api.bluelytics.com.ar/v2/latest");
 
@@ -18,10 +20,9 @@ const Home = () => {
   return (
     <>
       <Separador />
-      <Cotizacion data={data} />
+      <Cotizaciones data={data} />
       <Separador />
       <Graficos dataGraph={graphDataReaded} />
-      <Separador />
       <Calculadora data={data} />
     </>
   );

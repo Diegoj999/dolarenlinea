@@ -5,11 +5,12 @@ export const Calculadora = ({ data }) => {
     const [monto, setMonto] = useState(0);
 
   return (
-    <div className="py-6">
-      <h3 className="text-4xl text-center py-5 font-black">Calculadora</h3>
+    <div className="py-6 container mx-auto">
+      <h3 className="text-3xl text-center py-5 font-bold uppercase">Conversión de ARS a USD</h3>
+      <hr class="h-px my-4 bg-gray-200 border-0 "/>
       <div
         id="calculadora"
-        className="container w-90 md:w-3/5 lg:w-2/5 2xl:w-1/5 mx-auto rounded-lg py-5"
+        className="container w-90 md:w-3/5 lg:w-2/5 2xl:w-2/5 mx-auto rounded-lg py-5"
       >
         <form className="bg-stone-600  sm:rounded-lg flex flex-col px-5 justify-center py-5">
           <div className="flex m-3 mx-auto">
