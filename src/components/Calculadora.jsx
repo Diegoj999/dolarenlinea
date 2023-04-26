@@ -14,7 +14,7 @@ export const Calculadora = ({ data }) => {
       >
         <form className="bg-stone-600  sm:rounded-lg flex flex-col px-5 justify-center py-5">
           <div className="flex m-3 mx-auto">
-            <img
+            <img 
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/1200px-Flag_of_Argentina.svg.png"
               height={50}
               width={60}
