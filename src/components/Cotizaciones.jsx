@@ -9,7 +9,7 @@ const Cotizaciones = ({ data }) => {
         <div className="grid grid-cols-1 2xl:grid-cols-3 gap-y-8 py-5 order-last">
           <div className="flex flex-col max-w-md p-6 mx-auto border-t-8 border-blue-700 shadow">
             <h5 className="my-4 text-2xl font-bold tracking-tight text-gray-900 text-center">
-              Precio de Dolar Blue
+              Precio Dolar Blue
             </h5>
             <div className="py-1 flex justify-center gap-6">
               <div className="py-3">
@@ -33,9 +33,9 @@ const Cotizaciones = ({ data }) => {
 
          
 
-          <div className="flex flex-col max-w-md p-6 mx-auto border-t-8 border-green-700 shadow">
+         <div className="flex flex-col max-w-md p-6 mx-auto border-t-8 border-green-700 shadow">
             <h5 className="my-4 text-2xl font-bold tracking-tight text-gray-900 text-center px-6">
-              Precio de Dólar Oficial
+              Precio Dólar Oficial
             </h5>
             <div className="py-1 flex justify-center gap-6">
               <div className="py-3">
@@ -84,7 +84,7 @@ const Cotizaciones = ({ data }) => {
           <h2 className="text-2xl md:text-3xl py-2 uppercase font-bold">
             Cotización dólar hoy, Precio del dólar hoy
           </h2>
-          <hr class="h-px my-4 bg-gray-200 border-0 "/>
+          <hr className="h-px my-4 bg-gray-200 border-0 "/>
           <p className="pt-3 mt-1 mx-3">
             Lo que hay que saber del dólar hoy en la Argentina, con información
             completa y actualizada sobre la cotización del dólar en el Banco

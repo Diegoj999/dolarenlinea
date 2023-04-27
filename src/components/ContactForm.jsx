@@ -19,7 +19,7 @@ export default function ContactForm() {
   return (
     <div
       style={{ minHeight: "85vh" }}
-      className="bg-gray-100 pt-5 mt-5 md:mt-0 mx-2 bg-opacity-50 flex flex-col "
+      className="bg-gray-100 pt-10 mt-5 md:mt-0 mx-2 bg-opacity-50 flex flex-col "
     >
       <div className="flex-grow bg-gray-100 flex items-center mt-5 justify-center">
         <div className="bg-white rounded-lg shadow-md w-full md:w-1/2 lg:w-1/3">

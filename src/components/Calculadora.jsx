@@ -7,7 +7,7 @@ export const Calculadora = ({ data }) => {
   return (
     <div className="py-6 container mx-auto">
       <h3 className="text-2xl md:text-3xl text-center py-5 font-bold uppercase">Conversión de ARS a USD</h3>
-      <hr class="h-px my-4 bg-gray-200 border-0 "/>
+      <hr className="h-px my-4 bg-gray-200 border-0 "/>
       <div
         id="calculadora"
         className=" w-90 md:w-3/5 lg:w-2/5 2xl:w-2/5 mx-auto rounded-lg py-5"
@@ -32,9 +32,9 @@ export const Calculadora = ({ data }) => {
           <div className="flex m-3 mx-auto">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg"
-              height={60}
+              height={50}
               width={60}
-              alt="Hola"
+              alt="Bandera us"
             />
 
             <span className=" font-medium text-white mx-2">USD($)</span>
