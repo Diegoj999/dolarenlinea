@@ -1,42 +1,65 @@
-import React from 'react'
-import { Link, useNavigate } from "react-router-dom";
+import React from 'react';
+import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <div className='mt-auto'>
-      <footer aria-label="Site Footer" className="bg-blue-900">
-  <div className="mx-auto max-w-5xl px-4 py-2">
+    <footer className="bg-slate-900 border-t border-slate-800 mt-auto">
+      <div className="container mx-auto px-4 py-10 max-w-6xl">
+        
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          
+          {/* 1. LOGO / MARCA (Igual al Navbar para consistencia) */}
+          <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br from-green-500 to-green-700 text-white shadow-lg shadow-green-900/20">
+              <span className="text-lg font-bold">$</span>
+            </div>
+            <span className="text-lg font-bold text-white tracking-tight">
+              DolarBlue<span className="text-green-400">EnLinea</span>
+            </span>
+          </div>
 
-    <nav aria-label="Footer Nav" className="my-5">
-      <ul className="flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
-        <li>
-          <Link className="text-white text-sm md:text-base font-bold transition hover:text-gray-700/75 uppercase" to="/">
-            Inicio
-          </Link>
-        </li>
+          {/* 2. NAVEGACIÓN */}
+          <nav aria-label="Footer Nav">
+            <ul className="flex flex-wrap justify-center gap-8">
+              <li>
+                <Link 
+                  className="text-slate-400 transition hover:text-green-400 text-sm font-medium uppercase tracking-wider" 
+                  to="/"
+                >
+                  Inicio
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  className="text-slate-400 transition hover:text-green-400 text-sm font-medium uppercase tracking-wider" 
+                  to="/contacto"
+                >
+                  Contacto
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
 
-        <li>
-          <Link className="text-white text-sm md:text-base font-bold transition hover:text-gray-700/75 uppercase" to="/contacto">
-            Contacto
-          </Link>
-        </li>
-      </ul>
-      <hr
-   
-    className="container mx-auto py-4 mt-5 w-100 clearfix border-blue-700"
-  />
-      <div>
-        <p className='text-white font-bold text-center text-sm md:text-base'>DolarBlueEnLinea &copy; 2023 Todos los derechos reservados</p>
+        {/* 3. DIVISOR SUTIL */}
+        <div className="my-8 border-t border-slate-800" />
+
+        {/* 4. COPYRIGHT Y LEGALES */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+          <p className="text-slate-500 text-xs md:text-sm">
+            &copy; {currentYear} DolarBlueEnLinea. Todos los derechos reservados.
+          </p>
+          
+          <p className="text-slate-600 text-xs">
+            Hecho con <span className="text-red-500 animate-pulse">❤</span> en Argentina
+          </p>
+        </div>
+
       </div>
-    </nav>
-
-    
-  </div>
-</footer>
-    </div>
-    
-
-  )
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;
