@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import pluginRewriteAll from 'vite-plugin-rewrite-all';
+import { resolve } from 'path';
 
 export default defineConfig({
   plugins: [react(), pluginRewriteAll()],
@@ -8,5 +9,7 @@ export default defineConfig({
   build: {
     target: 'esnext',
     minify: 'esbuild',
+    assetsInclude: ['**/*.svg'],
   },
+  publicDir: 'public',
 })
