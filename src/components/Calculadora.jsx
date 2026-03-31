@@ -89,19 +89,22 @@ export const Calculadora = ({ data }) => {
               <label className="text-xs text-slate-400 ml-1 mb-2 block uppercase font-bold tracking-wider">
                 {esPesosBase ? "Tengo Pesos" : "Tengo Dólares"}
               </label>
-              <div className="flex items-center bg-slate-900 rounded-xl p-3 border border-slate-600 focus-within:border-blue-500 transition-colors shadow-inner">
+              <div className="flex items-center bg-slate-900 rounded-xl p-3 border border-slate-600 focus-within:border-blue-500 transition-colors shadow-inner overflow-hidden">
                 <img
                   src={esPesosBase 
                     ? "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/60px-Flag_of_Argentina.svg.png"
                     : "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/60px-Flag_of_the_United_States.svg.png"
                   }
-                  className="w-8 h-6 rounded shadow-sm object-cover" alt="Flag"
+                  className="w-8 h-6 rounded shadow-sm object-cover flex-shrink-0" 
+                  alt={esPesosBase ? "Bandera Argentina" : "Bandera Estados Unidos"}
+                  loading="lazy"
+                  decoding="async"
                 />
-                <span className="text-slate-300 font-bold mx-3">{esPesosBase ? "ARS" : "USD"}</span>
+                <span className="text-slate-300 font-bold mx-2 md:mx-3 flex-shrink-0">{esPesosBase ? "ARS" : "USD"}</span>
                 <input
                   type="number"
                   min="0"
-                  className="bg-transparent text-white text-2xl w-full focus:outline-none text-right font-mono placeholder-slate-600"
+                  className="bg-transparent text-white text-xl md:text-2xl w-full min-w-0 focus:outline-none text-right font-mono placeholder-slate-600"
                   placeholder="0"
                   value={cantidad}
                   onChange={handleInputChange}
@@ -124,16 +127,19 @@ export const Calculadora = ({ data }) => {
               <label className="text-xs text-slate-400 ml-1 mb-2 block uppercase font-bold tracking-wider">
                  {esPesosBase ? "Recibo Dólares" : "Recibo Pesos"}
               </label>
-              <div className="flex items-center bg-slate-800 rounded-xl p-3 border border-slate-600 opacity-90 shadow-inner">
+              <div className="flex items-center bg-slate-800 rounded-xl p-3 border border-slate-600 opacity-90 shadow-inner overflow-hidden">
                 <img
                   src={!esPesosBase 
                     ? "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/60px-Flag_of_Argentina.svg.png"
                     : "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/60px-Flag_of_the_United_States.svg.png"
                   }
-                  className="w-8 h-6 rounded shadow-sm object-cover" alt="Flag"
+                  className="w-8 h-6 rounded shadow-sm object-cover flex-shrink-0" 
+                  alt={!esPesosBase ? "Bandera Argentina" : "Bandera Estados Unidos"}
+                  loading="lazy"
+                  decoding="async"
                 />
-                <span className="text-slate-300 font-bold mx-3">{!esPesosBase ? "ARS" : "USD"}</span>
-                <div className="text-white text-2xl w-full text-right font-mono truncate font-bold text-green-400">
+                <span className="text-slate-300 font-bold mx-2 md:mx-3 flex-shrink-0">{!esPesosBase ? "ARS" : "USD"}</span>
+                <div className="text-white text-xl md:text-2xl min-w-0 w-full text-right font-mono font-bold text-green-400 truncate">
                   {cantidad ? formatearMoneda(resultado, esPesosBase ? 'USD' : 'ARS') : "---"}
                 </div>
               </div>

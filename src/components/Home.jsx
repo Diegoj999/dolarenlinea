@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { fetchData } from "./fetchData";
+import useDolarData from "../hooks/useDolarData";
 
 import Cotizaciones from "./Cotizaciones";
 import { Graficos } from "./Graficos";
 import { Calculadora } from "./Calculadora";
-
-const apiData = fetchData("https://api.bluelytics.com.ar/v2/latest");
+import { Loading } from "./Loading";
 
 const Home = () => {
-  const data = apiData.read();
+  const { data, loading, error } = useDolarData();
   const [showScroll, setShowScroll] = useState(false);
 
   useEffect(() => {
-    document.title = `Inicio - DolarBlueEnLinea`;
+    document.title = "DolarBlueEnLinea - Cotizaciones del Dólar en Tiempo Real";
 
-    // Lógica para mostrar el botón de subir solo al bajar un poco
     const checkScrollTop = () => {
       if (!showScroll && window.pageYOffset > 400) {
         setShowScroll(true);
@@ -29,6 +27,18 @@ const Home = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  if (error) {
+    return (
+      <main className="bg-slate-50 min-h-screen flex items-center justify-center">
+        <div className="text-center p-8">
+          <div className="text-red-500 text-6xl mb-4">⚠️</div>
+          <h2 className="text-2xl font-bold text-slate-800 mb-2">Error al cargar datos</h2>
+          <p className="text-slate-600">{error}</p>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="bg-slate-50 min-h-screen pb-20">
@@ -50,7 +60,7 @@ const Home = () => {
       <div className="container mx-auto px-4 -mt-24 relative z-20 space-y-16 max-w-6xl">
         
         <div className="animate-fade-in-up">
-           <Cotizaciones data={data} />
+           {loading ? <Loading /> : <Cotizaciones data={data} />}
         </div>
 
         <section id="graficos">
@@ -58,7 +68,7 @@ const Home = () => {
         </section>
         
         <section id="calculadora">
-          <Calculadora data={data} />
+          {loading ? <Loading /> : <Calculadora data={data} />}
         </section>
 
       </div>
