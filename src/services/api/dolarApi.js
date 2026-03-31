@@ -44,7 +44,7 @@ export const apiClient = new ApiClient(BASE_URL);
 
 export const dolarApi = {
   getLatest: () => apiClient.get('/latest'),
-  getEvolution: () => apiClient.get('/evolution.json'),
+  getEvolution: (days = 30) => apiClient.get(`/evolution.json?days=${days}`),
 };
 
 export default apiClient;
